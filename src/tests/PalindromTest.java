@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import zadanie1.PallindromChecker;
 
-public class Tests {
+public class PalindromTest {
 	
 	String correctPall, wrongPall, empty, single, bigcorrect, extraCharacters;
 	
