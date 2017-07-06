@@ -1,24 +1,27 @@
 package zadanie2;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public class Participian implements Person {
 
 	private String firstName, lastName;
-	private Date birthDate;
-	
+	private LocalDate birthDate;
+
 	public Participian(String firstName, String lastName, String birthDate) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		try {
-			this.birthDate = new SimpleDateFormat("yyyy-MM-DD").parse(birthDate);
-		} catch (ParseException e) {
-			System.out.println("Nieprawidlowy format daty urodzin" + birthDate);
-			e.printStackTrace();
-		}
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		this.birthDate = LocalDate.parse(birthDate, formatter);
 	}
+
+	@Override
+	public int countAge() {
+		LocalDate today = LocalDate.now();
+		return Period.between(birthDate, today).getYears();
+	}
+
 	@Override
 	public String getLastName() {
 		return lastName;
@@ -30,14 +33,13 @@ public class Participian implements Person {
 	}
 
 	@Override
-	public Date getBirthDate() {
+	public LocalDate getBirthDate() {
 		return birthDate;
 	}
-	
+
 	@Override
 	public String toString() {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
-		return firstName + " " + lastName + " " + sdf.format(birthDate);
+		return firstName + "," + lastName + "," + countAge();
 	}
 
 }

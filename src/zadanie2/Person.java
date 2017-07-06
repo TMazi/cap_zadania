@@ -1,13 +1,14 @@
 package zadanie2;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public interface Person {
 	
 	
 	String getLastName();
 	String getFirstName();
-	Date getBirthDate();
+	LocalDate getBirthDate();
 	String toString();
+	int countAge();
 
 }
