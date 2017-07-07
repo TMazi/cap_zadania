@@ -49,7 +49,7 @@ public class mainClass {
 			order = scan.nextLine();
 
 			while (!conf.doSomething(order)) {
-				System.out.println("Pan tego kompletnie nie rozumie! Wprowadz jeszcze raz");
+				System.out.println("Pan/i tego kompletnie nie rozumie! Wprowadz jeszcze raz");
 				order = scan.nextLine();
 			}
 			break;

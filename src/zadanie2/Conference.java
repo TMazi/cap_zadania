@@ -74,6 +74,7 @@ public class Conference {
 				Person person = new Participian(personData[0], personData[1], personData[2]);
 				participians.add(person);
 			}
+			br.close();
 
 		} catch (FileNotFoundException e) {
 			System.out.println("Blad! Nie ma takiego pliku");

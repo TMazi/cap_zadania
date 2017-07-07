@@ -22,16 +22,35 @@ public class PalindromTest {
 	}
 
 	@Test
-	public void testPallindrom() {
+	public void testPallindromCorrect() {
 		
 		assertTrue(PallindromChecker.isPalindrom(correctPall));
+	}
+	
+
+	@Test
+	public void testPallindromWrong() {
 		assertFalse(PallindromChecker.isPalindrom(wrongPall));
+	}
+
+	@Test
+	public void testEmptyCorrect() {
 		assertTrue(PallindromChecker.isPalindrom(empty));
+	}
+	
+	@Test
+	public void testSingleCorrect() {
 		assertTrue(PallindromChecker.isPalindrom(single));
-		assertTrue(PallindromChecker.isPalindrom(bigcorrect));
+	}
+	
+	@Test
+	public void testExtraCharactersCorrect() {
 		assertTrue(PallindromChecker.isPalindrom(extraCharacters));
-
-
+	}
+	
+	@Test
+	public void testBigCorrect() {
+		assertTrue(PallindromChecker.isPalindrom(bigcorrect));
 	}
 
 }
